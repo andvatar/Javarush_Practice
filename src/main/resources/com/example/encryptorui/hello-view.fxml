@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.encryptorui.EncryptorUIController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <BorderPane prefHeight="50.0" prefWidth="900.0">
+      <top>
+         <GridPane BorderPane.alignment="CENTER">
+           <columnConstraints>
+             <ColumnConstraints hgrow="SOMETIMES" maxWidth="207.0" minWidth="10.0" prefWidth="196.0" />
+             <ColumnConstraints hgrow="SOMETIMES" maxWidth="498.0" minWidth="10.0" prefWidth="428.0" />
+               <ColumnConstraints hgrow="SOMETIMES" maxWidth="244.0" minWidth="0.0" prefWidth="79.0" />
+           </columnConstraints>
+           <rowConstraints>
+               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+           </rowConstraints>
+            <children>
+               <Label prefHeight="17.0" prefWidth="210.0" text="Путь к файлу" />
+               <TextField id="filePath" fx:id="filePath" prefHeight="25.0" prefWidth="436.0" GridPane.columnIndex="1" />
+               <Button fx:id="selectFileButton" mnemonicParsing="false" onAction="#selectFile" text="Указать" GridPane.columnIndex="2" />
+            
+                <Label fx:id="welcomeText" prefHeight="17.0" prefWidth="186.0" text="Путь к файлу с образцом текста" GridPane.rowIndex="1" />
+               <TextField fx:id="statisticFilePath" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+               <Button fx:id="selectStatisticFileButton" mnemonicParsing="false" onAction="#selectStatisticFile" text="Указать" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            </children>
+         </GridPane>
+      </top>
+      <center>
+         <GridPane maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="748.0" BorderPane.alignment="CENTER">
+           <columnConstraints>
+             <ColumnConstraints hgrow="SOMETIMES" maxWidth="369.0" minWidth="10.0" prefWidth="255.0" />
+             <ColumnConstraints hgrow="SOMETIMES" maxWidth="698.0" minWidth="10.0" prefWidth="645.0" />
+           </columnConstraints>
+           <rowConstraints>
+             <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+           </rowConstraints>
+            <children>
+               <Label prefHeight="17.0" prefWidth="152.0" text="Ключ шифрования" />
+               <TextField fx:id="key" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="25.0" prefWidth="93.0" GridPane.columnIndex="1" />
+            </children>
+         </GridPane>
+      </center>
+   </BorderPane>
+   <GridPane>
+     <columnConstraints>
+       <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+       <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+     </columnConstraints>
+     <rowConstraints>
+       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+     </rowConstraints>
+      <children>
+         <Button mnemonicParsing="false" onAction="#encrypt" text="Зашифровать" />
+         <Button mnemonicParsing="false" onAction="#decrypt" text="Расшифровать" GridPane.columnIndex="1" />
+         <Button mnemonicParsing="false" onAction="#bruteForce" text="BruteForce" GridPane.columnIndex="2" />
+         <Button mnemonicParsing="false" onAction="#statisticAnalysis" text="Статистический анализ" GridPane.columnIndex="3" />
+      </children>
+   </GridPane>
+</VBox>
